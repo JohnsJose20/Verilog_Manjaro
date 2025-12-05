@@ -11,7 +11,7 @@ module johnson_counter(clk, reset, Q);
             Q <= 4'b0000;
         end
         else begin
-            Q <= {~Q[3], Q[3:1]}; // Shift right, MSB = inverted previous MSB
+            Q <= {Q[2:0],~Q[3]}; // Shift right, MSB = inverted previous MSB
         end
     end
 endmodule
